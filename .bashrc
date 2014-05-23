@@ -50,6 +50,13 @@ function untar() {
     fi
 }
 
+function swap() {
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE
+    mv "$2" "$1"
+    mv $TMPFILE "$2"
+}
+
 # BIND KEYS
 bind 'C-p:history-search-backward'
 bind 'C-n:history-search-forward'
@@ -69,6 +76,7 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export EDITOR="vim"
 export PAGER='less'
+export LSCOLORS="gxfxcxdxbxegedabagacad"
 export LESS="-fmrS"
 export LESSCHARDEF="8bcccbcc18b95.."
 export HOMEBREW_GITHUB_API_TOKEN="d68c394a614b7ccafe17de4b8a9830815e81d94b"
