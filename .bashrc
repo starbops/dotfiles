@@ -39,7 +39,7 @@ function untar() {
             *.tgz)      echo "tar xvzf $1"; tar xvzf $1 ;;
             *.txz)      echo "tar xvJf $1"; tar xvJf $1 ;;
             *.bz2)      echo "bunzip2 $1";  bunzip2  $1 ;;
-            *.rar)      echo "rar x $1";    rar x $1    ;;
+            *.rar)      echo "unrar x $1";    unrar x $1    ;;
             *.gz)       echo "gunzip $1";   gunzip $1   ;;
             *.zip)      echo "unzip $1";    unzip $1    ;;
             *.7z)       echo "7z x $1";     7z x $1     ;;
