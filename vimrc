@@ -17,6 +17,7 @@ set expandtab           " Turn <Tab> into spaces when hitting <Tab>
 set t_Co=256
 syntax on
 set background=dark
+colorscheme peaksea
 
 "" Column
 set wrap
@@ -45,10 +46,18 @@ set confirm
 set cursorline
 set ttyfast
 set backspace=indent,eol,start
-set laststatus=2
 set autoread
 set history=700
 set ffs=unix,dos,mac
+
+"" Custom highlight groups
+hi User1 ctermbg=green  ctermfg=red     guibg=green guifg=red
+hi User2 ctermbg=red    ctermfg=blue    guibg=red   guifg=blue
+hi User3 ctermbg=blue   ctermfg=green   guibg=blue  guifg=green
+
+"" Status line
+set laststatus=2
+set statusline=%1*[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%*%2*%y%*%3*%t%*%h%m%r%=%c,%l/%L\ %P
 
 "" Leader
 let mapleader=","
@@ -94,8 +103,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+"" Remove the Windows ^M - when the encoding gets messed up
+nnoremap <leader>m mmHmt:%s/<C-v><CR>//ge<CR>'tzt'm
+
 "" Toggle paste mode
-nnoremap <F3> :set paste!<CR>
+nnoremap <leader>p :setlocal paste!<CR>
 
 "" Last cursor position
 autocmd BufReadPost *
@@ -110,4 +122,12 @@ autocmd BufNewFile,BufRead * match ExtraWhitespace /\s\+$\| \+\ze\t\|\t\+\ze /
 
 "" Indentation for HTML syntax
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+"" Helper functions
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    en
+    return ''
+endfunction
 
