@@ -124,3 +124,40 @@ autocmd BufNewFile,BufRead * match ExtraWhitespace /\s\+$\| \+\ze\t\|\t\+\ze /
 "" Indentation for HTML syntax
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
+"" Indentation for Makefile syntax
+autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
+
+"" AutoGen for RST files
+" If a new ReStructuredText created, generate template for convenience.
+function! CreateTimestamp()
+    exe 's/$/===\r' .
+                \ expand('%:t:r') .
+                \ '\r===\r' .
+                \ '\r:date: ' . strftime('%Y-%m-%d %H:%M') .
+                \ '\r:modified: ' .
+                \ '\r:tags: ' .
+                \ '\r:category: ' .
+                \ '\r:slug: ' .
+                \ '\r:authors: Zespre Schmidt' .
+                \ '\r:about_author: Bug generator' .
+                \ '\r:email: starbops@gmail.com' .
+                \ '\r:summary: ' .
+                \ '\r\r'
+endfun
+autocmd BufNewFile *.rst call CreateTimestamp()
+
+" If buffer modified, update any ':modified: ' in the first 20 lines.
+" 'Last modified: ' can have up to 10 characters before (they are retained).
+" Restores cursor and window position using save_cursor variable.
+function! LastModified()
+    if &modified
+        let save_cursor = getpos(".")
+        let n = min([20, line("$")])
+        keepjumps exe '1,' . n . 's#^\(.\{,10}:modified: \).*#\1' .
+                    \ strftime('%Y-%m-%d %H:%M') . '#e'
+        call histdel('search', -1)
+        call setpos('.', save_cursor)
+    endif
+endfun
+autocmd BufWritePre * call LastModified()
+
