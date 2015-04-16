@@ -32,14 +32,15 @@ filetype plugin indent on
 "" Misc
 set nocompatible
 set nomodeline
+set nobackup            " no ~ file suffix
 set ruler
 set number
 set relativenumber
-set scrolloff=3
+set scrolloff=3         " remain number of lines at top and bottom
 set showmode
 set showcmd
 set hidden
-set wildmenu
+set wildmenu            " a better menu
 set wildmode=list:longest
 set visualbell
 set confirm
@@ -111,9 +112,9 @@ nnoremap <leader>p :setlocal paste!<CR>
 
 "" Last cursor position
 autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
 set viminfo^=%
 
 "" Highlight trailing whitespaces, [spaces]+[tab] and [tab]+[space]
@@ -122,12 +123,4 @@ autocmd BufNewFile,BufRead * match ExtraWhitespace /\s\+$\| \+\ze\t\|\t\+\ze /
 
 "" Indentation for HTML syntax
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-"" Helper functions
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction
 
