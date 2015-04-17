@@ -159,5 +159,5 @@ function! LastModified()
         call setpos('.', save_cursor)
     endif
 endfun
-autocmd BufWritePre * call LastModified()
+autocmd BufWritePre *.rst call LastModified()
 
