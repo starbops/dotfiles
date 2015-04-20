@@ -9,12 +9,8 @@ function load_pyenv() {
     export PYENV_ROOT
     PATH="$PYENV_ROOT/bin:$PATH"
     export PATH
-    if which pyenv > /dev/null; then
-        eval "$(pyenv init -)"
-    fi
-    if which pyenv-virtualenv-init > /dev/null; then
-        eval "$(pyenv virtualenv-init -)"
-    fi
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 }
 
 PATH="$PATH:/usr/local/sbin"
@@ -27,6 +23,14 @@ export LSCOLORS
 
 HOMEBREW_GITHUB_API_TOKEN="3aaf86247eb170f93588d6f73118a35d75c771f1"
 export HOMEBREW_GITHUB_API_TOKEN
+
+if [ -d "$HOME/.rvm" ]; then
+    PATH="$PATH:$HOME/.rvm/bin"
+    export PATH
+fi
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 
 case $(uname -s) in
@@ -45,12 +49,4 @@ case $(uname -s) in
     *)
         ;;
 esac
-
-if [ -d "$HOME/.rvm" ]; then
-    PATH="$PATH:$HOME/.rvm/bin"
-    export PATH
-fi
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
