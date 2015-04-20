@@ -46,21 +46,29 @@ function swap() {
     mv $TMPFILE "$2"
 }
 
-if [ $(uname -o) = "GNU/Linux" ]; then
+# Base16 Shell
+if [ -x "$HOME/.config/base16-shell/base16-eighties.dark.sh" ]; then
+    BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
+    [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+fi
+
+# ALIAS
+if [ $(uname -s) = "Linux" ]; then
     alias ls="ls --color=auto"
     alias grep="grep --colour=auto"
 fi
 
-# ALIAS
-alias ll="ls -lFhi"
+alias ls="ls -F"
+alias ll="ls -lhi"
 alias la="ll -A"
+alias grep="grep --colour=auto"
 alias vim="vim -p"
 
 # BIND KEYS
 bind "C-p:history-search-backward"
 bind "C-n:history-search-forward"
 
-PS1="\h \$(smiley) \e[30;1m\w\e[0m\n\u \$ "
+PS1="\h \$(smiley) \e[34;1m\w\e[0m\n\u \$ "
 LANG="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
 TERM="xterm-256color"

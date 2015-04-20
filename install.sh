@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 
 RCFILES=`ls | grep -v install.sh | grep -v README.md`
+BASE16_GIT='https://github.com/chriskempson/base16-shell.git'
+
+git clone ${BASE16_GIT} ~/.config/base16-shell
 
 for RCFILE in ${RCFILES}; do
     if [ -e ${HOME}/.${RCFILE} ]; then
