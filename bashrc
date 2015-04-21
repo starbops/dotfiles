@@ -54,11 +54,13 @@ fi
 
 # ALIAS
 if [ $(uname -s) = "Linux" ]; then
-    alias ls="ls --color=auto"
+    echo 'hi'
+    alias ls="ls -F --color=auto"
     alias grep="grep --colour=auto"
+else
+    alias ls="ls -F"
 fi
 
-alias ls="ls -F"
 alias ll="ls -lhi"
 alias la="ll -A"
 alias grep="grep --colour=auto"
