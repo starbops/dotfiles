@@ -54,7 +54,6 @@ fi
 
 # ALIAS
 if [ $(uname -s) = "Linux" ]; then
-    echo 'hi'
     alias ls="ls -F --color=auto"
     alias grep="grep --colour=auto"
 else
