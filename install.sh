@@ -3,7 +3,11 @@
 RCFILES=`ls | grep -v install.sh | grep -v README.md`
 BASE16_GIT='https://github.com/chriskempson/base16-shell.git'
 
-git clone ${BASE16_GIT} ~/.config/base16-shell
+if [ -d "${HOME}/.config/base16-shell" ]; then
+    echo "${HOME}/.config/base16-shell exists, skipped."
+else
+    git clone ${BASE16_GIT} ${HOME}/.config/base16-shell
+fi
 
 for RCFILE in ${RCFILES}; do
     if [ -e ${HOME}/.${RCFILE} ]; then
