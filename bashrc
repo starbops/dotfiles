@@ -76,15 +76,17 @@ fi
 
 # ALIAS
 if [ $(uname -s) = "Linux" ]; then
-    alias ls="ls --color=auto"
+    alias ls="ls -F --color=auto"
     alias grep="grep --colour=auto"
+else
+    alias ls="ls -F"
 fi
 
-alias ls="ls -F"
 alias ll="ls -lhi"
 alias la="ll -A"
 alias grep="grep --colour=auto"
 alias vim="vim -p"
+alias ssh="ssh -t"
 
 # BIND KEYS
 bind "C-p:history-search-backward"
@@ -95,6 +97,7 @@ LANG="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
 TERM="xterm-256color"
 EDITOR="vim"
+VISUAL="vim"
 PAGER="less"
 LESS="-fmrS"
 LESSCHARDEF="8bcccbcc18b95.."

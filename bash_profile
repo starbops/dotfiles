@@ -5,7 +5,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 function load_pyenv() {
-    PYENV_ROOT=$1   #"$HOME/.pyenv"
+    PYENV_ROOT=$1
     export PYENV_ROOT
     PATH="$PYENV_ROOT/bin:$PATH"
     export PATH
@@ -21,8 +21,8 @@ LSCOLORS="gxfxcxdxbxegedabagacad"
 export CLICOLOR
 export LSCOLORS
 
-HOMEBREW_GITHUB_API_TOKEN="3aaf86247eb170f93588d6f73118a35d75c771f1"
-export HOMEBREW_GITHUB_API_TOKEN
+#HOMEBREW_GITHUB_API_TOKEN=""
+#export HOMEBREW_GITHUB_API_TOKEN
 
 if [ -d "$HOME/.rvm" ]; then
     PATH="$PATH:$HOME/.rvm/bin"
