@@ -46,8 +46,7 @@ function swap() {
     mv $TMPFILE "$2"
 }
 
-function extract()      # Handy Extract Program
-{
+function extract() {
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar jxvf $1     ;;
