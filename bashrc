@@ -46,6 +46,10 @@ function swap() {
     mv $TMPFILE "$2"
 }
 
+function backup() {
+    cp $1 $1.bak
+}
+
 function extract() {
     if [ -f $1 ] ; then
         case $1 in
