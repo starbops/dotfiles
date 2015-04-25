@@ -116,6 +116,8 @@ autocmd FileType python setlocal keywordprg=pydoc
 autocmd FileType ruby setlocal keywordprg=ri
 autocmd FileType perl setlocal keywordprg=perldoc\ -f
 
+autocmd FileType rst setlocal spell spelllang=en_us
+
 "" Last cursor position
 autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
