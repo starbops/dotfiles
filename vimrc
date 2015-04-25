@@ -110,6 +110,12 @@ nnoremap <leader>m mmHmt:%s/<C-v><CR>//ge<CR>'tzt'm
 "" Toggle paste mode
 nnoremap <leader>p :setlocal paste!<CR>
 
+"" Quick keyword lookup
+autocmd FileType rst setlocal keywordprg=ydict
+autocmd FileType python setlocal keywordprg=pydoc
+autocmd FileType ruby setlocal keywordprg=ri
+autocmd FileType perl setlocal keywordprg=perldoc\ -f
+
 "" Last cursor position
 autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
