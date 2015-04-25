@@ -129,15 +129,20 @@ autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
 
 "" AutoGen for RST files
 " If a new ReStructuredText created, generate template for convenience.
+"
+" Example: Given by **fow** and **sakkemo** at #vim IRC channel:
+"
+"   autocmd BufNewFile *.rst call setline(1, repeat('=', len(expand("<afile>"))))
+"   autocmd BufNewFile *.rst call append(0, repeat('=', len(expand("<afile>"))))
 function! CreateTimestamp()
-    exe 's/$/===\r' .
-                \ expand('%:t:r') .
-                \ '\r===\r' .
+    exe 's/$/' . repeat('=', len(expand('%:t:r'))+2) .
+                \ '\r ' . expand('%:t:r') .
+                \ '\r' . repeat('=', len(expand('%:t:r'))+2) .
                 \ '\r:date: ' . strftime('%Y-%m-%d %H:%M') .
                 \ '\r:modified: ' .
                 \ '\r:tags: ' .
                 \ '\r:category: ' .
-                \ '\r:slug: ' .
+                \ '\r:slug: ' . expand('%:t:r') .
                 \ '\r:authors: Zespre Schmidt' .
                 \ '\r:about_author: Bug generator' .
                 \ '\r:email: starbops@gmail.com' .
