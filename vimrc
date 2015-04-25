@@ -134,11 +134,11 @@ autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
 "
 "   autocmd BufNewFile *.rst call setline(1, repeat('=', len(expand("<afile>"))))
 "   autocmd BufNewFile *.rst call append(0, repeat('=', len(expand("<afile>"))))
-function! CreateTimestamp()
+function! RSTTemplate()
     exe 's/$/' . repeat('=', len(expand('%:t:r'))+2) .
                 \ '\r ' . expand('%:t:r') .
                 \ '\r' . repeat('=', len(expand('%:t:r'))+2) .
-                \ '\r:date: ' . strftime('%Y-%m-%d %H:%M') .
+                \ '\r\r:date: ' . strftime('%Y-%m-%d %H:%M') .
                 \ '\r:modified: ' .
                 \ '\r:tags: ' .
                 \ '\r:category: ' .
@@ -149,12 +149,12 @@ function! CreateTimestamp()
                 \ '\r:summary: ' .
                 \ '\r\r'
 endfun
-autocmd BufNewFile *.rst call CreateTimestamp()
+autocmd BufNewFile *.rst call RSTTemplate()
 
 " If buffer modified, update any ':modified: ' in the first 20 lines.
 " 'Last modified: ' can have up to 10 characters before (they are retained).
 " Restores cursor and window position using save_cursor variable.
-function! LastModified()
+function! RSTLastModified()
     if &modified
         let save_cursor = getpos(".")
         let n = min([20, line("$")])
@@ -164,5 +164,5 @@ function! LastModified()
         call setpos('.', save_cursor)
     endif
 endfun
-autocmd BufWritePre *.rst call LastModified()
+autocmd BufWritePre *.rst call RSTLastModified()
 
