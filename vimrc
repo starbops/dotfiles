@@ -50,6 +50,7 @@ set backspace=indent,eol,start
 set autoread
 set history=700
 set ffs=unix,dos,mac
+set mouse=a
 
 "" Custom highlight groups
 hi User1 ctermbg=green  ctermfg=red     guibg=green guifg=red
