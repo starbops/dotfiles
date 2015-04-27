@@ -89,7 +89,6 @@ alias ll="ls -lhi"
 alias la="ll -A"
 alias grep="grep --colour=auto"
 alias vim="vim -p"
-alias ssh="ssh -t"
 
 # BIND KEYS
 bind "C-p:history-search-backward"
