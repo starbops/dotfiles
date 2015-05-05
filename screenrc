@@ -1,0 +1,23 @@
+shelltitle "$ |-"
+hardstatus alwayslastline "%{= RY}%H %{kG}%{G} Screen(s): %{c}%w %=%{kG}%c %D, %M %d %Y "
+
+attrcolor b ".I"
+defbce "on"
+
+startup_message off
+defencoding utf8
+defscrollback 5000
+bind b encoding big5 utf8 # convert big5 to utf8
+bind u encoding utf8 utf8
+
+bind !  select 11
+bind @  select 12
+bind \# select 13
+bind $  select 14
+bind %  select 15
+bind \^ select 16
+bind &  select 17
+bind *  select 18
+bind (  select 19
+bind )  select 10
+
