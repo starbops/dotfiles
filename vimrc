@@ -50,7 +50,6 @@ set backspace=indent,eol,start
 set autoread
 set history=700
 set ffs=unix,dos,mac
-set mouse=a
 
 "" Custom highlight groups
 hi User1 ctermbg=green  ctermfg=red     guibg=green guifg=red
@@ -132,6 +131,12 @@ autocmd BufNewFile,BufRead * match ExtraWhitespace /\s\+$\| \+\ze\t\|\t\+\ze /
 
 "" Indentation for HTML syntax
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+"" Indentation for CSS syntax
+autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+"" Indentation for JADE syntax
+autocmd BufNewFile,BufRead *.jade setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 "" Indentation for Makefile syntax
 autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
