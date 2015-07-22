@@ -104,6 +104,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+"" Save the content as privilege user, e.g. root
+nnoremap <leader>w :w !sudo tee %<CR>
+
 "" Remove the Windows ^M - when the encoding gets messed up
 nnoremap <leader>m mmHmt:%s/<C-v><CR>//ge<CR>'tzt'm
 
