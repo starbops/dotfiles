@@ -14,8 +14,7 @@ git clone ${SALT_VIM}
 cp -r salt-vim/ftdetect \
       salt-vim/ftplugin \
       salt-vim/syntax \
-      dotfiles/vim/
-rm -rf salt-vim
+      vim/
 
 for RCFILE in ${RCFILES}; do
     if [ -e ${HOME}/.${RCFILE} ]; then
