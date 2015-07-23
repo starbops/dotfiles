@@ -132,6 +132,9 @@ set viminfo^=%
 autocmd BufNewFile,BufRead * hi ExtraWhitespace ctermbg=red guibg=red
 autocmd BufNewFile,BufRead * match ExtraWhitespace /\s\+$\| \+\ze\t\|\t\+\ze /
 
+"" Indentation for SLS syntax
+autocmd FileType sls setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
 "" Indentation for HTML syntax
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
