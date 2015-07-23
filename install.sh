@@ -10,16 +10,12 @@ else
     git clone ${BASE16_GIT} ${HOME}/.config/base16-shell
 fi
 
-if [ -d "${HOME}/salt-vim" ]; then
-    echo "${HOME}/salt-vim exists, skipped."
-else
-    git clone ${SALT_VIM}
-fi
-cp -r ${HOME}/salt-vim/ftdetect \
-      ${HOME}/salt-vim/ftplugin \
-      ${HOME}/salt-vim/syntax \
-      ${HOME}/dotfiles/vim/
-rm -rf ${HOME}/salt-vim
+git clone ${SALT_VIM}
+cp -r salt-vim/ftdetect \
+      salt-vim/ftplugin \
+      salt-vim/syntax \
+      dotfiles/vim/
+rm -rf salt-vim
 
 for RCFILE in ${RCFILES}; do
     if [ -e ${HOME}/.${RCFILE} ]; then
