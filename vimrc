@@ -94,6 +94,7 @@ vnoremap ; :
 inoremap fj <ESC>
 
 "" Tab pages
+set tabpagemax=100
 nnoremap <leader>h gT
 nnoremap <leader>l gt
 nnoremap <leader>e :tabedit 
