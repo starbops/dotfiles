@@ -11,7 +11,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export EDITOR='/opt/homebrew/bin/vim'
-export LESS="-F -X"
+export LESS="-F -R -X"
 export DEFAULT_USER=$(whoami)
 export GPG_TTY=$TTY
 
