@@ -1,0 +1,80 @@
+import = [
+  "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
+]
+
+live_config_reload = true
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor]
+blink_interval = 500
+blink_timeout = 5
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 16
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "FiraCode Nerd Font"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[keyboard]
+bindings = [
+  { mods = "Command", key = "Return", action = "ToggleSimpleFullscreen" },
+]
+
+[mouse]
+hide_when_typing = true
+bindings = [
+  { mouse = "Middle", action = "PasteSelection" },
+]
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[shell]
+program = "/bin/zsh"
+args = ["-l"]
+
+[window]
+blur = false
+decorations = "None"
+dynamic_title = true
+opacity = 0.9
+option_as_alt = "Both"
+
+[window.dimensions]
+columns = 160
+lines = 47
+
+[window.padding]
+x = 4
+y = 4
+
