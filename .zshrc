@@ -20,6 +20,9 @@ export do='--dry-run=client -o yaml'
 export now='--force --grace-period=0'
 export nk='-n kube-system'
 
+# Environment variables - gnubin
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+
 # Environment variables - Krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
