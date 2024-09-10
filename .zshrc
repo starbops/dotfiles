@@ -74,6 +74,10 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Bash like cursor moves
+autoload -U select-word-style
+select-word-style bash
+
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
