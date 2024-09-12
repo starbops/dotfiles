@@ -113,6 +113,7 @@ alias c='clear'
 alias k='kubectl'
 alias kaf='k apply -f'
 alias kdf='k delete -f'
+alias tmux='tmux -2'
 
 # Shell integrations
 eval "$(fzf --zsh)"
