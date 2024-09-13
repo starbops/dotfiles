@@ -74,15 +74,35 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Bash like cursor moves
-autoload -U select-word-style
-select-word-style bash
-
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
+
+# Bash-like cursor moving and deletion
+my-forward-word() {
+    local WORDCHARS=${WORDCHARS//[\/.-]/}
+    zle forward-word
+}
+zle -N my-forward-word
+bindkey '^[f' my-forward-word
+
+my-backward-word() {
+    local WORDCHARS=${WORDCHARS//[\/.-]/}
+    zle backward-word
+}
+zle -N my-backward-word
+bindkey '^[b' my-backward-word
+
+my-backward-kill-word() {
+    local WORDCHARS=${WORDCHARS//[\/.-]/}
+    zle backward-kill-word
+}
+zle -N my-backward-kill-word
+bindkey '^[^?' my-backward-kill-word
+
+ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(backward-kill-word my-backward-kill-word)
 
 # History
 HISTSIZE=10000
