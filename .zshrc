@@ -123,6 +123,9 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cat:*' fzf-preview 'bat -n --color=always --theme=Nord $realpath'
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':fzf-tab:*' popup-min-size 80 12
 
 # Aliases
 alias ls='ls --color'
@@ -136,7 +139,7 @@ alias kdf='k delete -f'
 alias tmux='tmux -2'
 
 # Shell integrations
-eval "$(fzf --zsh)"
+FZF_CTRL_T_COMMAND= eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(pyenv init -)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
