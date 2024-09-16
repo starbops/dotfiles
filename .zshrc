@@ -121,11 +121,21 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:cat:*' fzf-preview 'bat -n --color=always --theme=Nord $realpath'
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-zstyle ':fzf-tab:*' popup-min-size 80 12
+zstyle ':completion:*:descriptions' format '[%d]'
+#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+#zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+#zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+#zstyle ':fzf-tab:*' popup-min-size 80 12
+zstyle ':fzf-tab:complete:(cat|cd|cp|ls|mv|nvim|vim):*' fzf-preview \
+    '[[ -d $realpath ]] && { echo "Directory: \e[1m$(basename "$realpath")\e[0m" && eza -1a --color=always --ignore-glob ".DS_Store|.idea|.vscode" $realpath } || bat --color=always --theme=Nord $realpath'
+zstyle ':fzf-tab:complete:(cat|cd|cp|ls|mv|nvim|vim):*' fzf-flags \
+    --border=double \
+    --height=40% \
+    --preview-window=right:65%:wrap:border-double \
+    --bind='tab:toggle-down' \
+    --bind='ctrl-\:change-preview-window(down,90%,wrap,cycle,border-double|hidden|right,50%,wrap,cycle,border-double)' \
+    --bind='up:preview-up,down:preview-down,shift-up:preview-page-up,shift-down:preview-page-down,shift-left:preview-top,shift-right:preview-bottom'
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Aliases
 alias ls='ls --color'
