@@ -7,6 +7,8 @@
 
 ## Prerequisites
 
+### Build-time Dependencies
+
 1. Install `git`
    ```shell
    # macOS example
@@ -17,6 +19,13 @@
    # macOS example
    brew install stow
    ```
+
+### Runtime Dependencies
+
+- fzf
+- zoxide
+- fd
+- eza
 
 ## Construct your environment
 
