@@ -82,21 +82,21 @@ bindkey '^[w' kill-region
 
 # Bash-like cursor moving and deletion
 my-forward-word() {
-    local WORDCHARS=${WORDCHARS//[\/.-=]/}
+    local WORDCHARS=${WORDCHARS//[\/.\-=]/}
     zle forward-word
 }
 zle -N my-forward-word
 bindkey '^[f' my-forward-word
 
 my-backward-word() {
-    local WORDCHARS=${WORDCHARS//[\/.-=]/}
+    local WORDCHARS=${WORDCHARS//[\/.\-=]/}
     zle backward-word
 }
 zle -N my-backward-word
 bindkey '^[b' my-backward-word
 
 my-backward-kill-word() {
-    local WORDCHARS=${WORDCHARS//[\/.-=]/}
+    local WORDCHARS=${WORDCHARS//[\/.\-=]/}
     zle backward-kill-word
 }
 zle -N my-backward-kill-word
