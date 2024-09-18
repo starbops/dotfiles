@@ -102,6 +102,8 @@ my-backward-kill-word() {
 zle -N my-backward-kill-word
 bindkey '^[^?' my-backward-kill-word
 
+# Ensure the killed words are added to the kill ring
+# Not to be interfered with the autosuggestion plug-in
 ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(backward-kill-word my-backward-kill-word)
 
 # History
