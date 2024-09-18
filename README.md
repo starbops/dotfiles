@@ -90,3 +90,9 @@
    ```
 2. Start Neovim, all the plug-ins should be installed by Lazy.nvim plug-in manager
 
+## References
+
+- [A Guide to the Zsh Completion with Examples](https://thevaluable.dev/zsh-completion-guide-examples/)
+- [jeffry.in/lightweight-intelligent-completion-in-zsh](https://jeffry.in/lightweight-intelligent-completion-in-zsh)
+- [Git Completions & Tooling on the Command Line - Michael Bianco](https://mikebian.co/git-completions-tooling-on-the-command-line/)
+
