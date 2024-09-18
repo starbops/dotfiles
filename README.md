@@ -22,10 +22,20 @@
 
 ### Runtime Dependencies
 
+#### Zsh
+
 - fzf
 - zoxide
 - fd
 - eza
+
+#### Neovim
+
+- python-lsp-server
+  ```shell
+  # macOS example
+  brew install python-lsp-server
+  ```
 
 ## Construct your environment
 
