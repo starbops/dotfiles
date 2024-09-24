@@ -31,7 +31,9 @@ export GOPATH="$HOME/go"
 export PATH="$(go env GOPATH)/bin:$PATH"
 
 # Environment variables - Java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
+# Populated by executing /usr/libexec/java_home on macOS
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
 #export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home"
 #export JAVA_HOME="/opt/homebrew/Cellar/openjdk/16.0.2"
 
