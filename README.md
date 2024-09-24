@@ -36,6 +36,11 @@
   # macOS example
   brew install python-lsp-server
   ```
+- ripgrep
+  ```shell
+  # macOS example
+  brew install ripgrep
+  ```
 
 ## Construct your environment
 
