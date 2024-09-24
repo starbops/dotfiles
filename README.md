@@ -103,4 +103,6 @@
 - [delve/Documentation/installation at master · go-delve/delve](https://github.com/go-delve/delve/tree/master/Documentation/installation#macos-considerations)
 - [Why there is no nvim-dapconfig](https://github.com/nvim-lua/wishlist/issues/37#issuecomment-1023363686)
 - [How to debug like a PRO using Neovim 🔥](https://miguelcrespo.co/posts/how-to-debug-like-a-pro-using-neovim/)
+- [vim tmux backspace ^? - Super User](https://superuser.com/questions/410864/vim-tmux-backspace/1726134#1726134)
+- [Problems with SSH while in tmux · Issue #559 · gpakosz/.tmux](https://github.com/gpakosz/.tmux/issues/559#issuecomment-1366842709)
 
