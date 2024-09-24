@@ -100,4 +100,7 @@
 - [A Guide to the Zsh Completion with Examples](https://thevaluable.dev/zsh-completion-guide-examples/)
 - [jeffry.in/lightweight-intelligent-completion-in-zsh](https://jeffry.in/lightweight-intelligent-completion-in-zsh)
 - [Git Completions & Tooling on the Command Line - Michael Bianco](https://mikebian.co/git-completions-tooling-on-the-command-line/)
+- [delve/Documentation/installation at master · go-delve/delve](https://github.com/go-delve/delve/tree/master/Documentation/installation#macos-considerations)
+- [Why there is no nvim-dapconfig](https://github.com/nvim-lua/wishlist/issues/37#issuecomment-1023363686)
+- [How to debug like a PRO using Neovim 🔥](https://miguelcrespo.co/posts/how-to-debug-like-a-pro-using-neovim/)
 
