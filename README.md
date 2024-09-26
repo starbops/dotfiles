@@ -105,4 +105,5 @@
 - [How to debug like a PRO using Neovim 🔥](https://miguelcrespo.co/posts/how-to-debug-like-a-pro-using-neovim/)
 - [vim tmux backspace ^? - Super User](https://superuser.com/questions/410864/vim-tmux-backspace/1726134#1726134)
 - [Problems with SSH while in tmux · Issue #559 · gpakosz/.tmux](https://github.com/gpakosz/.tmux/issues/559#issuecomment-1366842709)
+- [Handling Whitespace in Neovim](https://www.manjotbal.ca/blog/neovim-whitespace.html)
 
