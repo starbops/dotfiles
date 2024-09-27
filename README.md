@@ -106,4 +106,4 @@
 - [vim tmux backspace ^? - Super User](https://superuser.com/questions/410864/vim-tmux-backspace/1726134#1726134)
 - [Problems with SSH while in tmux · Issue #559 · gpakosz/.tmux](https://github.com/gpakosz/.tmux/issues/559#issuecomment-1366842709)
 - [Handling Whitespace in Neovim](https://www.manjotbal.ca/blog/neovim-whitespace.html)
-
+- [Configure Linting, Formatting, and Autocompletion in Neovim](https://andrewcourter.substack.com/p/configure-linting-formatting-and)
