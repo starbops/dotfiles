@@ -5,10 +5,14 @@ return {
       "williamboman/mason.nvim",
     },
     opts = {
-      "cppdbg",
-      "delve",
-      "python",
-    }
+      ensure_installed = {
+        "bash",
+        "cppdbg",
+        "delve",
+        "javadbg",
+        "python",
+      },
+    },
   },
 
   {
