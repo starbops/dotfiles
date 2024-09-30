@@ -1,17 +1,32 @@
 return {
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+    opts = {
+      "cppdbg",
+      "delve",
+      "python",
+    }
+  },
+
+  {
     "mfussenegger/nvim-dap",
+    dependencies = {
+      "jay-babu/mason-nvim-dap.nvim",
+    },
     config = function()
-      vim.fn.sign_define("DapBreakpoint",{ text = "🟥", texthl = "", linehl = "", numhl = ""})
-      vim.fn.sign_define("DapStopped",{ text = "▶️", texthl = "", linehl = "", numhl = ""})
+      vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
+      vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" })
     end,
     keys = {
-      { "<F5>", '<cmd>lua require("dap").continue()<CR>', mode = "n", desc = "DAP continue" },
-      { "<S-F5>", '<cmd>lua require("dap").terminate()<CR>', mode = "n", desc = "DAP terminate" },
-      { "<F9>", '<cmd>lua require("dap").toggle_breakpoint()<CR>', mode = "n", desc = "DAP toggle breakpoint" },
-      { "<F10>", '<cmd>lua require("dap").step_over()<CR>', mode = "n", desc = "DAP step over" },
-      { "<F11>", '<cmd>lua require("dap").step_into()<CR>', mode = "n", desc = "DAP step into" },
-      { "<S-F11>", '<cmd>lua require("dap").step_out()<CR>', mode = "n", desc = "DAP step out" },
+      { "<F5>",    '<cmd>lua require("dap").continue()<CR>',          mode = "n", desc = "DAP continue" },
+      { "<S-F5>",  '<cmd>lua require("dap").terminate()<CR>',         mode = "n", desc = "DAP terminate" },
+      { "<F9>",    '<cmd>lua require("dap").toggle_breakpoint()<CR>', mode = "n", desc = "DAP toggle breakpoint" },
+      { "<F10>",   '<cmd>lua require("dap").step_over()<CR>',         mode = "n", desc = "DAP step over" },
+      { "<F11>",   '<cmd>lua require("dap").step_into()<CR>',         mode = "n", desc = "DAP step into" },
+      { "<S-F11>", '<cmd>lua require("dap").step_out()<CR>',          mode = "n", desc = "DAP step out" },
     },
   },
 
@@ -46,7 +61,7 @@ return {
     end,
     keys = {
       { "<leader>dq", '<cmd>lua require("dapui").close()<CR>', mode = "n", desc = "DAP UI close" },
-    }
+    },
   },
 
   {
@@ -58,7 +73,7 @@ return {
     ft = "go",
     opts = {},
     keys = {
-      { "<leader>dt", '<cmd>lua require("dap-go").debug_test()<CR>', mode = "n", desc = "DAP Go debug test" },
+      { "<leader>dt", '<cmd>lua require("dap-go").debug_test()<CR>',      mode = "n", desc = "DAP Go debug test" },
       { "<leader>dl", '<cmd>lua require("dap-go").debug_last_test()<CR>', mode = "n", desc = "DAP Go debug last test" },
     },
   },

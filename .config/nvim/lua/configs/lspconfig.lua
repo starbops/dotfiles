@@ -13,6 +13,8 @@ local servers = {
   "dockerls",
   "html",
   "jdtls",
+  "jsonls",
+  "marksman",
   "pylsp",
   "ruby_lsp",
   "terraformls",
