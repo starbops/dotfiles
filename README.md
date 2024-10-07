@@ -31,16 +31,16 @@
 
 #### Neovim
 
-- python-lsp-server
-  ```shell
-  # macOS example
-  brew install python-lsp-server
-  ```
 - ripgrep
   ```shell
   # macOS example
   brew install ripgrep
   ```
+
+In order to let Mason work correctly, you need to install the following programs before starting Neovim:
+
+- go
+- npm
 
 ## Construct your environment
 
