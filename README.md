@@ -4,6 +4,7 @@
 - Zsh
 - Tmux
 - Neovim
+- Ghostty
 
 ## Prerequisites
 
@@ -62,6 +63,14 @@ In order to let Mason work correctly, you need to install the following programs
    ```shell
    # macOS example
    brew install alacritty
+   ```
+
+### Ghostty
+
+1. Ensure Ghostty is installed
+   ```shell
+   # macOS example
+   brew install ghostty --cask
    ```
 
 ### Zsh

@@ -10,4 +10,3 @@ map("i", "kj", "<ESC>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 map("n", "<leader><Tab><Tab>", "<cmd> set invlist <CR>")
-
