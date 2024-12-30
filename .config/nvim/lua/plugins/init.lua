@@ -59,6 +59,7 @@ return {
         "java",
         "javascript",
         "json",
+        "kdl",
         "latex",
         "lua",
         "make",

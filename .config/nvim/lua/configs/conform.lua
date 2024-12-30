@@ -7,6 +7,7 @@ local options = {
     java = { "google-java-format" },
     javascript = { "prettierd", "prettier", stop_after_first = true },
     json = { "prettierd", "prettier", stop_after_first = true },
+    kdl = { "kdlfmt" },
     lua = { "stylua" },
     markdown = { "prettierd", "prettier", stop_after_first = true },
     python = { "isort", "black" },
