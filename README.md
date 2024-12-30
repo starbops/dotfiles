@@ -5,6 +5,7 @@
 - Tmux
 - Neovim
 - Ghostty
+- Zellij
 
 ## Prerequisites
 
@@ -94,6 +95,14 @@ In order to let Mason work correctly, you need to install the following programs
    tmux new -s <session-name>
    ```
 3. Press `<Prefix>+I` to install the plug-ins
+
+### Zellij
+
+1. Ensure Zellij is installed
+   ```shell
+   # macOS example
+   brew install zellij
+   ```
 
 ### Neovim
 
