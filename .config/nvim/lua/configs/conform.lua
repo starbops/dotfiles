@@ -12,7 +12,7 @@ local options = {
     markdown = { "prettierd", "prettier", stop_after_first = true },
     python = { "isort", "black" },
     ruby = { "standardrb" },
-    yaml = { "yamlfix" },
+    -- yaml = { "yamlfix" },
   },
 
   format_on_save = {
