@@ -26,8 +26,8 @@ clipboard-trim-trailing-spaces = true
 copy-on-select = false
 click-repeat-interval = 0
 
-quick-terminal-position = right
-quick-terminal-screen = macos-menu-bar
+quick-terminal-position = center
+quick-terminal-screen = main
 quick-terminal-autohide = false
 
 keybind = global:ctrl+.=toggle_quick_terminal
