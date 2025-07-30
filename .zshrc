@@ -40,6 +40,10 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home"
 # Environment variables - NVM
 export NVM_DIR="$HOME/.nvm"
 
+# Environment variables - Cloud Code
+CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=1
+# DISABLE_AUTOUPDATER=1
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -161,3 +165,4 @@ source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.3.5
 
+alias claude="/Users/starbops/.claude/local/claude"

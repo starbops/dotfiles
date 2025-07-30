@@ -36,3 +36,4 @@ keybind = cmd+r=reload_config
 window-inherit-working-directory = true
 
 shell-integration-features = no-cursor
+keybind = shift+enter=text:\n
