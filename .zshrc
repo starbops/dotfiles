@@ -163,6 +163,7 @@ eval "$(pyenv init -)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.3.5
+chruby ruby-3.4.5
+
 
 alias claude="/Users/starbops/.claude/local/claude"
