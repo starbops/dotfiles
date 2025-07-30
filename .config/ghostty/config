@@ -16,6 +16,7 @@ window-padding-y = 0
 window-padding-color = extend
 window-height = 36
 window-width = 120
+window-save-state = always
 
 macos-titlebar-style = tabs
 macos-option-as-alt = left
@@ -28,7 +29,8 @@ click-repeat-interval = 0
 
 quick-terminal-position = center
 quick-terminal-screen = main
-quick-terminal-autohide = false
+quick-terminal-autohide = true
+quick-terminal-space-behavior = remain
 
 keybind = global:ctrl+.=toggle_quick_terminal
 keybind = cmd+r=reload_config
