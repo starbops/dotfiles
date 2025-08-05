@@ -95,6 +95,7 @@ keybinds clear-defaults=true {
         bind "Alt k" { MoveFocus "up"; SwitchToMode "locked"; }
         bind "Alt l" { MoveFocus "right"; SwitchToMode "locked"; }
         bind "s" { SwitchToMode "normal"; }
+        bind "Ctrl l" { Clear; SwitchToMode "locked"; }
     }
     search {
         bind "c" { SearchToggleOption "CaseSensitivity"; }
