@@ -1,0 +1,7 @@
+function gif() {
+    local input_file="$1"
+    local output_file="${input_file%.*}.gif"
+
+    ffmpeg -y -i "$input_file" -v quiet -vf scale=iw/2:ih/2 -pix_fmt rgb8 -r 10 "$output_file" && \
+    gifsicle -O3 "$output_file" -o "$output_file"
+}

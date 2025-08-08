@@ -167,3 +167,7 @@ chruby ruby-3.4.5
 
 
 alias claude="/Users/starbops/.claude/local/claude"
+
+# Custom functions
+fpath=(~/.config/zsh/functions $fpath)
+autoload -Uz ~/.config/zsh/functions/*
