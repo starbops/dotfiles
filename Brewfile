@@ -38,6 +38,7 @@ cask "alfred"
 cask "shottr"
 cask "obsidian"
 cask "tailscale-app"
+cask "gcloud-cli"
 
 # Security / Encryption
 brew "gnupg"
