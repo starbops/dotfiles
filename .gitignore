@@ -1,0 +1,15 @@
+*.local
+.env
+.env.*
+.DS_Store
+
+# Ghostty runtime files written through the symlinked dir
+ghostty/.config/ghostty/themes/
+ghostty/.config/ghostty/config.local
+
+zed/.config/zed/db/
+zed/.config/zed/conversations/
+zed/.config/zed/extensions/
+zed/.config/zed/languages/
+zed/.config/zed/prompts/
+zed/.config/zed/*.log
