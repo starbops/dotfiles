@@ -87,6 +87,7 @@ cask "slack"
 cask "discord"
 
 # AI tool
+brew "ollama"
 cask "claude"
 cask "claude-code"
 
