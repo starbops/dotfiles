@@ -79,6 +79,7 @@ cask "google-chrome"
 cask "zen"
 
 # Container / Virtualization tool
+brew "helm"
 cask "orbstack"
 
 # Communication software
