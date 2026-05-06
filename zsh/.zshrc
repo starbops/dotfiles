@@ -76,8 +76,11 @@ bindkey '^[y' .yank-pop                # so the YANK widget flag is preserved on
 bindkey '^[d' kill-segment             # Alt+D — forward kill, segment-aware
 
 # History
-bindkey '^P' up-line-or-history
-bindkey '^N' down-line-or-history
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^P' up-line-or-beginning-search
+bindkey '^N' down-line-or-beginning-search
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 
