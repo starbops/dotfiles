@@ -91,5 +91,9 @@ brew "ollama"
 cask "claude"
 cask "claude-code"
 
+# Diagnostic tool
+brew "mtr"
+cask "wireshark-app"
+
 # Entertainment
 cask "spotify"
