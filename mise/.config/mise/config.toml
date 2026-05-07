@@ -2,6 +2,7 @@
 go     = "1.26"
 node   = "24"
 python = "3.14"
+"pipx:redfishtool" = "1.1.8"
 
 [settings]
 # nice-to-haves
