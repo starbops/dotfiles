@@ -70,6 +70,7 @@ brew "sass/sass/sass"
 
 # Programming language
 brew "php"
+brew "uv"
 
 # Network protocol
 brew "krb5"
