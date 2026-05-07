@@ -39,6 +39,7 @@ cask "shottr"
 cask "obsidian"
 cask "tailscale-app"
 cask "gcloud-cli"
+cask "tunnelblick"
 
 # Security / Encryption
 brew "gnupg"
