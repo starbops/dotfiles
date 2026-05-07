@@ -40,6 +40,7 @@ cask "obsidian"
 cask "tailscale-app"
 cask "gcloud-cli"
 cask "tunnelblick"
+brew "hugo"
 
 # Security / Encryption
 brew "gnupg"
@@ -60,6 +61,11 @@ brew "libsodium"
 brew "libedit"
 brew "libiconv"
 brew "libjpeg"
+
+# Sass compiler
+tap "dart-lang/dart"
+tap "sass/sass"
+brew "sass/sass/sass"
 
 # Programming language
 brew "php"
