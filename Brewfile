@@ -42,6 +42,7 @@ cask "obsidian"
 cask "tailscale-app"
 cask "gcloud-cli"
 cask "tunnelblick"
+cask "keymapp"
 
 # Security / Encryption
 brew "gnupg"
