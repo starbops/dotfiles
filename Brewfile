@@ -97,6 +97,8 @@ cask "slack"
 cask "discord"
 
 # AI tool
+tap "jundot/omlx", "https://github.com/jundot/omlx"
+brew "jundot/omlx/omlx"
 brew "llm"
 brew "ollama"
 cask "claude"
