@@ -99,7 +99,9 @@ cask "discord"
 
 # AI tool
 tap "jundot/omlx", "https://github.com/jundot/omlx"
+tap "anomalyco/tap"
 brew "jundot/omlx/omlx"
+brew "anomalyco/tap/opencode"
 brew "llm"
 brew "ollama"
 cask "claude"
