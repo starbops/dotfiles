@@ -104,6 +104,7 @@ brew "jundot/omlx/omlx"
 brew "anomalyco/tap/opencode"
 brew "llm"
 brew "ollama"
+brew "pi-coding-agent"
 cask "claude"
 cask "claude-code"
 
