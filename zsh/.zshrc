@@ -35,6 +35,10 @@ zinit wait lucid for \
 # fzf-tab — fuzzy tab completion
 zinit wait lucid light-mode for Aloxaf/fzf-tab
 
+# Tab/Shift-Tab to toggle multi-select inside fzf-tab (Ctrl-Space is taken
+# by macOS input-method switcher). Enter still accepts.
+zstyle ':fzf-tab:*' fzf-bindings 'tab:toggle+down' 'btab:toggle+up'
+
 # =============================================================================
 # Keybindings — force emacs mode + standard readline-style movement
 # =============================================================================
