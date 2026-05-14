@@ -110,6 +110,7 @@ cask "claude-code"
 
 # Diagnostic tool
 brew "mtr"
+brew "smartmontools"
 cask "wireshark-app"
 
 # Entertainment
