@@ -108,7 +108,8 @@ brew "pi-coding-agent"
 cask "claude"
 cask "claude-code"
 
-# Diagnostic tool
+# System utilities
+brew "cdrtools"
 brew "mtr"
 brew "smartmontools"
 cask "wireshark-app"
