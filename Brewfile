@@ -1,4 +1,5 @@
 # Shell + prompt
+brew "fish"
 brew "zsh"
 brew "starship"
 
@@ -16,6 +17,7 @@ brew "bat"
 brew "zoxide"
 brew "tree"
 brew "fastfetch"
+brew "ast-grep"
 
 # Tool management
 brew "mise"
