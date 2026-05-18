@@ -7,6 +7,7 @@ brew "stow"
 
 # Modern CLI
 brew "curl"
+brew "wget"
 brew "fzf"
 brew "ripgrep"
 brew "fd"
