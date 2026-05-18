@@ -1,4 +1,5 @@
 *.local
+!k9s/.local/
 .env
 .env.*
 .DS_Store

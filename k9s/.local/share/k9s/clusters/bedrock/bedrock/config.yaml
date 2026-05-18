@@ -1,0 +1,17 @@
+k9s:
+  cluster: bedrock
+  skin: black-and-wtf
+  namespace:
+    active: all
+    lockFavorites: true
+    favorites:
+      - all
+      - harvester-system
+      - longhorn-system
+      - kubevirtbmc-system
+      - virtual-harvester
+  view:
+    active: kubevirt.io/v1/virtualmachines all
+  featureGates:
+    nodeShell: false
+  proxy: null

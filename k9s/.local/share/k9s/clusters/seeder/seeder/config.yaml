@@ -1,0 +1,14 @@
+k9s:
+  cluster: seeder
+  skin: black-and-wtf
+  namespace:
+    active: tink-system
+    lockFavorites: true
+    favorites:
+      - all
+      - tink-system
+  view:
+    active: v1/pods tink-system
+  featureGates:
+    nodeShell: false
+  proxy: null

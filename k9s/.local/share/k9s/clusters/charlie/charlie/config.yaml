@@ -1,0 +1,18 @@
+k9s:
+  cluster: charlie
+  namespace:
+    active: all
+    lockFavorites: true
+    favorites:
+      - all
+      - harvester-system
+      - cattle-system
+      - longhorn-system
+      - cattle-fleet-local-system
+      - kube-system
+      - default
+  view:
+    active: v1/pods all
+  featureGates:
+    nodeShell: false
+  proxy: null
