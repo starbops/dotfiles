@@ -48,6 +48,7 @@ cask "tailscale-app"
 cask "gcloud-cli"
 cask "tunnelblick"
 cask "keymapp"
+cask "windows-app"
 
 # Security / Encryption
 brew "gnupg"
