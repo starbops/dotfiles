@@ -1,0 +1,19 @@
+k9s:
+  cluster: default
+  skin: solarized-light
+  namespace:
+    active: all
+    lockFavorites: true
+    favorites:
+      - all
+      - harvester-system
+      - longhorn-system
+      - cattle-system
+      - cattle-fleet-system
+      - kube-system
+      - default
+  view:
+    active: management.harvesterhci.io/v1beta1/upgradeplans
+  featureGates:
+    nodeShell: false
+  proxy: null
