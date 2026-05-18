@@ -112,6 +112,11 @@ brew "pi-coding-agent"
 cask "claude"
 cask "claude-code"
 
+# Document processing
+brew "ghostscript"
+brew "tectonic"
+brew "mermaid-cli"
+
 # System utilities
 brew "cdrtools"
 brew "mtr"
