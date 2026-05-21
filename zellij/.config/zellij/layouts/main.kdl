@@ -1,0 +1,433 @@
+layout {
+    cwd "$HOME"
+    tab name="ai" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane command="pi" name="pi" cwd=".pi/agent" size="50%" {
+                start_suspended true
+            }
+            pane command="btop" name="monitoring" size="50%" {
+                start_suspended true
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="sbk" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane command="zsh" name="inspector" size="50%" {
+                args "-c" "export KUBECONFIG=$HOME/.sim/admin.kubeconfig; zsh"
+            }
+            pane size="50%" {
+                pane name="rca" cwd="Downloads" size="70%"
+                pane name="simulator" cwd="/tmp" size="30%"
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="dev-local" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane cwd="Developer/Projects/SUSE"
+            pane cwd="Developer/Projects/SUSE"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="dev-remote" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane command="ssh" name="build" size="60%" {
+                args "-o" "SetEnv TERM=xterm-256color" "hp-171" "-l" "imp"
+                start_suspended true
+            }
+            pane command="ssh" name="artifacts" size="40%" {
+                args "-o" "SetEnv TERM=xterm-256color" "hp-171" "-l" "imp"
+                start_suspended true
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="nested-harv" focus=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane command="python" name="config-server" cwd="Developer/Demos/nested-harvester" size=2 borderless=true {
+            args "-m" "http.server" "9453"
+        }
+        pane split_direction="vertical" {
+            pane command="zsh" name="command-center" cwd="Developer/Demos/nested-harvester" size="40%" {
+                args "-c" "export KUBECONFIG=$HOME/.kube/slc-seeder.yaml; zsh"
+            }
+            pane size="60%" {
+                pane command="zsh" name="slc-seeder" size="50%" {
+                    args "-c" "export KUBECONFIG=$HOME/.kube/slc-seeder.yaml; k9s"
+                    start_suspended true
+                }
+                pane command="zsh" name="bedrock" size="50%" {
+                    args "-c" "export KUBECONFIG=$HOME/.kube/bedrock.yaml; k9s"
+                    start_suspended true
+                }
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        floating_panes {
+            pane command="zsh" name="alfa" {
+                args "-c" "export KUBECONFIG=/tmp/alfa.yaml; k9s"
+                start_suspended true
+            }
+            pane command="zsh" name="bravo" {
+                args "-c" "export KUBECONFIG=/tmp/bravo.yaml; k9s"
+                start_suspended true
+            }
+            pane command="zsh" name="charlie" focus=true {
+                args "-c" "export KUBECONFIG=/tmp/charlie.yaml; k9s"
+                start_suspended true
+            }
+        }
+    }
+    tab name="debug" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane
+            pane
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="lab" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane
+        pane
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="exp" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane cwd="Developer/Demos"
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="misc" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    new_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    swap_tiled_layout name="vertical" {
+        tab max_panes=5 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane {
+                pane split_direction="vertical" {
+                    pane
+                    pane {
+                        children
+                    }
+                }
+            }
+            pane size=1 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+        }
+        tab max_panes=8 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane {
+                pane split_direction="vertical" {
+                    pane {
+                        children
+                    }
+                    pane {
+                        pane
+                        pane
+                        pane
+                        pane
+                    }
+                }
+            }
+            pane size=1 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+        }
+        tab max_panes=12 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane {
+                pane split_direction="vertical" {
+                    pane {
+                        children
+                    }
+                    pane {
+                        pane
+                        pane
+                        pane
+                        pane
+                    }
+                    pane {
+                        pane
+                        pane
+                        pane
+                        pane
+                    }
+                }
+            }
+            pane size=1 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+        }
+    }
+    swap_tiled_layout name="horizontal" {
+        tab max_panes=4 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane {
+                pane
+                pane
+            }
+            pane size=1 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+        }
+        tab max_panes=8 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane {
+                pane {
+                    pane split_direction="vertical" {
+                        children
+                    }
+                    pane split_direction="vertical" {
+                        pane
+                        pane
+                        pane
+                        pane
+                    }
+                }
+            }
+            pane size=1 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+        }
+        tab max_panes=12 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane {
+                pane {
+                    pane split_direction="vertical" {
+                        children
+                    }
+                    pane split_direction="vertical" {
+                        pane
+                        pane
+                        pane
+                        pane
+                    }
+                    pane split_direction="vertical" {
+                        pane
+                        pane
+                        pane
+                        pane
+                    }
+                }
+            }
+            pane size=1 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+        }
+    }
+    swap_tiled_layout name="stacked" {
+        tab min_panes=5 {
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            pane {
+                pane split_direction="vertical" {
+                    pane
+                    pane stacked=true {
+                        children
+                    }
+                }
+            }
+            pane size=1 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+        }
+    }
+    swap_floating_layout name="staggered" {
+        floating_panes {
+        }
+    }
+    swap_floating_layout name="enlarged" {
+        floating_panes max_panes=10 {
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x "5%"
+                y 1
+            }
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x "5%"
+                y 2
+            }
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x "5%"
+                y 3
+            }
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x "5%"
+                y 4
+            }
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x "5%"
+                y 5
+            }
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x "5%"
+                y 6
+            }
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x "5%"
+                y 7
+            }
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x "5%"
+                y 8
+            }
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x "5%"
+                y 9
+            }
+            pane cwd="/Users/starbops" {
+                height "90%"
+                width "90%"
+                x 10
+                y 10
+            }
+        }
+    }
+    swap_floating_layout name="spread" {
+        floating_panes max_panes=1 {
+            pane cwd="/Users/starbops" {
+                x "50%"
+                y "50%"
+            }
+        }
+        floating_panes max_panes=2 {
+            pane cwd="/Users/starbops" {
+                width "45%"
+                x "1%"
+                y "25%"
+            }
+            pane cwd="/Users/starbops" {
+                width "45%"
+                x "50%"
+                y "25%"
+            }
+        }
+        floating_panes max_panes=3 {
+            pane cwd="/Users/starbops" {
+                height "45%"
+                width "45%"
+                y "55%"
+            }
+            pane cwd="/Users/starbops" {
+                width "45%"
+                x "1%"
+                y "1%"
+            }
+            pane cwd="/Users/starbops" {
+                width "45%"
+                x "50%"
+                y "1%"
+            }
+        }
+        floating_panes max_panes=4 {
+            pane cwd="/Users/starbops" {
+                height "45%"
+                width "45%"
+                x "1%"
+                y "55%"
+            }
+            pane cwd="/Users/starbops" {
+                height "45%"
+                width "45%"
+                x "50%"
+                y "55%"
+            }
+            pane cwd="/Users/starbops" {
+                height "45%"
+                width "45%"
+                x "1%"
+                y "1%"
+            }
+            pane cwd="/Users/starbops" {
+                height "45%"
+                width "45%"
+                x "50%"
+                y "1%"
+            }
+        }
+    }
+}
+
