@@ -125,4 +125,5 @@ brew "smartmontools"
 cask "wireshark-app"
 
 # Entertainment
+brew "mpv"
 cask "spotify"
