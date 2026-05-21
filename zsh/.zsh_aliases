@@ -16,3 +16,15 @@ alias kns='kubectl config set-context --current --namespace'
 # Misc
 alias reload='exec zsh'
 alias stow='stow -v'
+
+# Workaround for Homebrew command-not-found handler bug
+# `brew which-formula` no longer accepts `--skip-update` but `handler.sh` still passes it.
+brew() {
+  if [[ "$1" == "which-formula" && "$2" == "--skip-update" ]]; then
+    shift 2
+    command brew which-formula "$@"
+  else
+    command brew "$@"
+  fi
+}
+
