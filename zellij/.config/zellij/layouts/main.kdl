@@ -1,14 +1,14 @@
 layout {
-    cwd "/"
+    cwd "$HOME"
     tab name="ai" hide_floating_panes=true {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
         pane split_direction="vertical" {
-            pane command="pi" name="pi" cwd="Users/starbops/.pi/agent" size="50%" {
+            pane command="pi" name="pi" cwd=".pi/agent" size="50%" {
                 start_suspended true
             }
-            pane command="btop" name="monitoring" cwd="Users/starbops" size="50%" {
+            pane command="btop" name="monitoring" size="50%" {
                 start_suspended true
             }
         }
@@ -21,17 +21,12 @@ layout {
             plugin location="zellij:tab-bar"
         }
         pane split_direction="vertical" {
-            pane command="k9s" name="inspector" cwd="Users/starbops" size="50%" {
-                start_suspended true
+            pane command="zsh" name="inspector" size="50%" {
+                args "-c" "export KUBECONFIG=$HOME/.sim/admin.kubeconfig; zsh"
             }
             pane size="50%" {
-                pane command="pi" name="rca" cwd="Users/starbops/Downloads/supportbundle_60109800-fbe7-410e-b79f-4097ff6c186d_2026-05-20T12-47-57Z" size="50%" {
-                    start_suspended true
-                }
-                pane command="support-bundle-kit" name="simulator" cwd="private/tmp/supportbundle_60109800-fbe7-410e-b79f-4097ff6c186d_2026-05-20T12-47-57Z" size="50%" {
-                    args "simulator" "--reset"
-                    start_suspended true
-                }
+                pane name="rca" cwd="Downloads" size="70%"
+                pane name="simulator" cwd="/tmp" size="30%"
             }
         }
         pane size=1 borderless=true {
@@ -42,83 +37,9 @@ layout {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
-        pane command="zsh" cwd="Users/starbops/Developer/Projects/SUSE/harvester" {
-            start_suspended true
-        }
-        pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
-        }
-    }
-    tab name="debug" hide_floating_panes=true {
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
         pane split_direction="vertical" {
-            pane cwd="Users/starbops" size="50%"
-            pane command="zsh" cwd="Users/starbops" size="50%" {
-                start_suspended true
-            }
-        }
-        pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
-        }
-    }
-    tab name="misc" hide_floating_panes=true {
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
-        pane command="zsh" cwd="Users/starbops" {
-            start_suspended true
-        }
-        pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
-        }
-    }
-    tab name="lab" hide_floating_panes=true {
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
-        pane cwd="Users/starbops"
-        pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
-        }
-    }
-    tab name="nested-harv" focus=true {
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
-        pane split_direction="vertical" {
-            pane command="python" name="command-center" cwd="Users/starbops/Developer/Demos/nested-harvester" size="50%" {
-                args "-m" "http.server" "9453"
-                start_suspended true
-            }
-            pane size="50%" {
-                pane command="k9s" name="slc-seeder" cwd="Users/starbops" size="50%" {
-                    start_suspended true
-                }
-                pane command="k9s" name="bedrock" cwd="Users/starbops" size="50%" {
-                    start_suspended true
-                }
-            }
-        }
-        pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
-        }
-        floating_panes {
-            pane focus=true {
-                height 16
-                width 157
-                x 8
-                y 1
-            }
-        }
-    }
-    tab name="exp" hide_floating_panes=true {
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
-        pane command="zsh" cwd="Users/starbops/Developer/Demos/kube-vip-multi-interfaces" {
-            start_suspended true
+            pane cwd="Developer/Projects/SUSE"
+            pane cwd="Developer/Projects/SUSE"
         }
         pane size=1 borderless=true {
             plugin location="zellij:status-bar"
@@ -129,18 +50,95 @@ layout {
             plugin location="zellij:tab-bar"
         }
         pane split_direction="vertical" {
-            pane name="build" cwd="Users/starbops" size="50%"
-            pane name="artifacts" cwd="Users/starbops" size="50%"
+            pane command="ssh" name="build" size="60%" {
+                args "-o" "SetEnv TERM=xterm-256color" "hp-171" "-l" "imp"
+                start_suspended true
+            }
+            pane command="ssh" name="artifacts" size="40%" {
+                args "-o" "SetEnv TERM=xterm-256color" "hp-171" "-l" "imp"
+                start_suspended true
+            }
         }
         pane size=1 borderless=true {
             plugin location="zellij:status-bar"
         }
     }
-    tab name="firecracker" hide_floating_panes=true {
+    tab name="nested-harv" focus=true {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
-        pane cwd="Users/starbops"
+        pane command="python" name="config-server" cwd="Developer/Demos/nested-harvester" size=2 borderless=true {
+            args "-m" "http.server" "9453"
+        }
+        pane split_direction="vertical" {
+            pane command="zsh" name="command-center" cwd="Developer/Demos/nested-harvester" size="40%" {
+                args "-c" "export KUBECONFIG=$HOME/.kube/slc-seeder.yaml; zsh"
+            }
+            pane size="60%" {
+                pane command="zsh" name="slc-seeder" size="50%" {
+                    args "-c" "export KUBECONFIG=$HOME/.kube/slc-seeder.yaml; k9s"
+                    start_suspended true
+                }
+                pane command="zsh" name="bedrock" size="50%" {
+                    args "-c" "export KUBECONFIG=$HOME/.kube/bedrock.yaml; k9s"
+                    start_suspended true
+                }
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        floating_panes {
+            pane command="zsh" name="alfa" {
+                args "-c" "export KUBECONFIG=/tmp/alfa.yaml; k9s"
+                start_suspended true
+            }
+            pane command="zsh" name="bravo" {
+                args "-c" "export KUBECONFIG=/tmp/bravo.yaml; k9s"
+                start_suspended true
+            }
+            pane command="zsh" name="charlie" focus=true {
+                args "-c" "export KUBECONFIG=/tmp/charlie.yaml; k9s"
+                start_suspended true
+            }
+        }
+    }
+    tab name="debug" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane
+            pane
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="lab" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane
+        pane
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="exp" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane cwd="Developer/Demos"
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="misc" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane
         pane size=1 borderless=true {
             plugin location="zellij:status-bar"
         }
@@ -149,7 +147,7 @@ layout {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
-        pane cwd="/Users/starbops"
+        pane
         pane size=1 borderless=true {
             plugin location="zellij:status-bar"
         }
