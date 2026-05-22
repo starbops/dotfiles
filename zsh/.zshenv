@@ -16,6 +16,5 @@ export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-export KUBECONFIG="$HOME/.kube/config"
 
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
