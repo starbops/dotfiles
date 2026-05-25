@@ -18,6 +18,8 @@ brew "zoxide"
 brew "tree"
 brew "fastfetch"
 brew "ast-grep"
+brew "jq"
+brew "yq"
 
 # Tool management
 brew "mise"
