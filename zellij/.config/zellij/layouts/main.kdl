@@ -24,9 +24,9 @@ layout {
             pane command="zsh" name="inspector" size="50%" {
                 args "-c" "export KUBECONFIG=$HOME/.sim/admin.kubeconfig; zsh"
             }
-            pane size="50%" {
-                pane name="rca" cwd="Downloads" size="70%"
-                pane name="simulator" cwd="/tmp" size="30%"
+            pane size="50%" stacked=true {
+                pane name="rca" cwd="Downloads"
+                pane name="simulator" cwd="/tmp"
             }
         }
         pane size=1 borderless=true {
