@@ -90,16 +90,13 @@ layout {
         }
         floating_panes {
             pane command="zsh" name="alfa" {
-                args "-c" "export KUBECONFIG=/tmp/alfa.yaml; k9s"
-                start_suspended true
+                args "-c" "export KUBECONFIG=/tmp/alfa.yaml; zsh"
             }
             pane command="zsh" name="bravo" {
-                args "-c" "export KUBECONFIG=/tmp/bravo.yaml; k9s"
-                start_suspended true
+                args "-c" "export KUBECONFIG=/tmp/bravo.yaml; zsh"
             }
             pane command="zsh" name="charlie" focus=true {
-                args "-c" "export KUBECONFIG=/tmp/charlie.yaml; k9s"
-                start_suspended true
+                args "-c" "export KUBECONFIG=/tmp/charlie.yaml; zsh"
             }
         }
     }
