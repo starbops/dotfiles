@@ -103,6 +103,7 @@ cask "orbstack"
 # Communication software
 cask "slack"
 cask "discord"
+cask "zoom"
 
 # AI tool
 tap "jundot/omlx", "https://github.com/jundot/omlx"
