@@ -7,12 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diff_view_style": "unified",
   "agent": {
     "default_profile": "ask",
     "default_model": {
-      "effort": "high",
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "provider": "ollama",
+      "model": "gemma4:e4b-mlx",
       "enable_thinking": true,
     },
     "favorite_models": [],
@@ -22,9 +22,6 @@
     "mcp-server-context7": {
       "enabled": true,
       "remote": false,
-      "settings": {
-        "context7_api_key": "ctx7sk-9ec2174e-c04b-4b86-be6c-092c2d2f60f4",
-      },
     },
   },
   "agent_servers": {
