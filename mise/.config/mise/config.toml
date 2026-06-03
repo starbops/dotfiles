@@ -1,11 +1,13 @@
 [tools]
-go     = "1.26"
-node   = "24"
+go = "1.26"
+node = "24"
 python = "3.14"
 "pipx:redfishtool" = "1.1.8"
 "npm:playwright" = "1.59"
+"npm:ctx7" = "0.4.5"
 
 [settings]
 # nice-to-haves
-experimental    = true
-idiomatic_version_file_enable_tools = []   # don't auto-read .python-version etc; be explicit
+experimental = true
+idiomatic_version_file_enable_tools = [
+] # don't auto-read .python-version etc; be explicit
