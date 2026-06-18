@@ -73,9 +73,10 @@ brew "libiconv"
 brew "libjpeg"
 
 # Sass compiler
-tap "dart-lang/dart"
-tap "sass/sass"
-brew "sass/sass/sass"
+tap "dart-lang/dart", trusted: true
+tap "sass/sass", trusted: true
+brew "dart-lang/dart/dart", trusted: true
+brew "sass/sass/sass", trusted: true
 
 # Programming language
 brew "php"
@@ -106,10 +107,10 @@ cask "discord"
 cask "zoom"
 
 # AI tool
-tap "jundot/omlx", "https://github.com/jundot/omlx"
-tap "anomalyco/tap"
-brew "jundot/omlx/omlx"
-brew "anomalyco/tap/opencode"
+tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
+tap "anomalyco/tap", trusted: true
+brew "jundot/omlx/omlx", trusted: true
+brew "anomalyco/tap/opencode", trusted: true
 brew "llm"
 brew "ollama"
 brew "pi-coding-agent"
