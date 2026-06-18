@@ -124,6 +124,7 @@ brew "mermaid-cli"
 
 # System utilities
 brew "cdrtools"
+brew "iperf3"
 brew "mtr"
 brew "smartmontools"
 cask "wireshark-app"
