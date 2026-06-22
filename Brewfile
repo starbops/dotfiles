@@ -117,6 +117,7 @@ brew "ollama"
 brew "pi-coding-agent"
 cask "claude"
 cask "claude-code"
+cask "codex"
 
 # Document processing
 brew "ghostscript"
