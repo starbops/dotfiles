@@ -135,3 +135,7 @@ cask "wireshark-app"
 # Entertainment
 brew "mpv"
 cask "spotify"
+
+# Cloud-native tools
+brew "kubernetes-cli"
+brew "kustomize"
