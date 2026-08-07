@@ -102,6 +102,9 @@ cask "zen"
 
 # Container / Virtualization tool
 brew "helm"
+brew "kubernetes-cli"
+brew "kustomize"
+brew "virtctl"
 cask "orbstack"
 
 # Communication software
@@ -138,6 +141,3 @@ cask "wireshark-app"
 brew "mpv"
 cask "spotify"
 
-# Cloud-native tools
-brew "kubernetes-cli"
-brew "kustomize"
