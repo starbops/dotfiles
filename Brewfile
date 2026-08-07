@@ -30,6 +30,7 @@ cask "stats"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
+cask "font-comic-shanns-mono-nerd-font"
 
 # Terminal emulator + multiplexer
 brew "zellij"
@@ -43,6 +44,7 @@ brew "hugo"
 brew "asciinema"
 brew "cloudflared"
 brew "lazygit"
+brew "qrencode"
 cask "alfred"
 cask "shottr"
 cask "obsidian"
