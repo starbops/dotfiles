@@ -140,4 +140,5 @@ cask "wireshark-app"
 # Entertainment
 brew "mpv"
 cask "spotify"
+cask "openttd"
 
