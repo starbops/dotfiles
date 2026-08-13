@@ -137,6 +137,9 @@ brew "mtr"
 brew "smartmontools"
 cask "wireshark-app"
 
+# Personal finance
+cask "gnucash"
+
 # Entertainment
 brew "mpv"
 cask "spotify"
