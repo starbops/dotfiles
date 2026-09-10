@@ -81,9 +81,13 @@ tap "sass/sass", trusted: true
 brew "dart-lang/dart/dart", trusted: true
 brew "sass/sass/sass", trusted: true
 
+# API / Code generation
+brew "openapi-generator"
+
 # Programming language
 brew "php"
 brew "uv"
+brew "openjdk"
 
 # Network protocol
 brew "krb5"
