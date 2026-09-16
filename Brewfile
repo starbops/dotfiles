@@ -115,6 +115,7 @@ cask "orbstack"
 cask "slack"
 cask "discord"
 cask "zoom"
+cask "microsoft-teams"
 
 # AI tool
 tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
