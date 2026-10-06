@@ -90,6 +90,9 @@ brew "php"
 brew "uv"
 brew "openjdk"
 
+# Network tool
+cask "surge"
+
 # Network protocol
 brew "krb5"
 
