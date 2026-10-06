@@ -49,8 +49,6 @@ cask "alfred"
 cask "shottr"
 cask "obsidian"
 cask "notion"
-cask "tailscale-app"
-cask "cloudflare-warp"
 cask "gcloud-cli"
 cask "tunnelblick"
 cask "keymapp"
@@ -90,11 +88,14 @@ brew "php"
 brew "uv"
 brew "openjdk"
 
-# Network tool
-cask "surge"
-
-# Network protocol
+# Networking
+brew "iperf3"
 brew "krb5"
+brew "mtr"
+cask "cloudflare-warp"
+cask "surge"
+cask "tailscale-app"
+cask "wireshark-app"
 
 # Image processing
 brew "gd"
@@ -140,11 +141,8 @@ brew "mermaid-cli"
 
 # System utilities
 brew "cdrtools"
-brew "iperf3"
 brew "ipmitool"
-brew "mtr"
 brew "smartmontools"
-cask "wireshark-app"
 
 # Personal finance
 cask "gnucash"
