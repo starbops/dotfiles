@@ -133,6 +133,7 @@ brew "pi-coding-agent"
 cask "claude"
 cask "claude-code"
 cask "codex"
+cask "grok-bot"
 
 # Document processing
 brew "ghostscript"
